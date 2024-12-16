@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Phishing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Phone Number</h2>
+        <form id="phishingForm">
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result" style="display: none; margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        document.getElementById('phishingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Simulate sending a blank SMS
+            alert('A blank SMS has been sent to your phone.');
+
+            // Simulate reading SMS messages
+            var resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '<h3>Reading SMS Messages...</h3>';
+
+            // Simulate a delay to mimic reading SMS messages
+            setTimeout(function() {
+                resultDiv.innerHTML = '<h3>SMS Messages Read:</h3><p>This is a simulated message.</p>';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
